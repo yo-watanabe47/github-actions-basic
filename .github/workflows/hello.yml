@@ -1,0 +1,8 @@
+name: basic-exercises Workflow  # ワークフローの名前（GitHubのActionsタブに表示されます）
+on: [push]                      # 実行のトリガー（リポジトリにPushされた時に動きます）
+
+jobs:                           # 実行するジョブ（作業のまとまり）の定義
+  hello-job:                    # ジョブの識別名（任意の名前でOKです）
+    runs-on: ubuntu-latest      # ジョブを実行する仮想マシンのOS（最新のUbuntuを指定）
+    steps:                      # ジョブ内で実行する作業の手順
+      - run: echo "Hello, GitHub Actions!"  # 実行するコマンド（メッセージをコンソールに出力）
