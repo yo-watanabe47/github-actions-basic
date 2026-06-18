@@ -1,5 +1,5 @@
 name: Parallel Job Workflow   # 並列実行用のワークフロー
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   job1:                       # 1つ目のジョブ
