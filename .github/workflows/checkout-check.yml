@@ -1,0 +1,24 @@
+name: Checkout Check Workflow   # チェックアウト確認用のワークフロー
+on: [push]
+
+jobs:
+  # ① チェックアウトを【しない】ジョブ
+  without-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ディレクトリの確認（Checkoutなし）
+        run: |
+          echo "=== Checkoutしていない状態のファイル一覧 ==="
+          ls -la
+
+  # ② チェックアウトを【する】ジョブ
+  with-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+
+      - name: ディレクトリの確認（Checkoutあり）
+        run: |
+          echo "=== Checkoutした状態のファイル一覧 ==="
+          ls -la

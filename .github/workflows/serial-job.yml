@@ -1,6 +1,5 @@
 name: Serial Job Workflow     # 直列実行用のワークフロー
-on: [push]
-
+on: [workflow_dispatch]
 jobs:
   job1:                       # 先に実行されるジョブ
     runs-on: ubuntu-latest
