@@ -1,5 +1,5 @@
 name: Parallel Job Workflow   # 並列実行用のワークフロー
-on: [workflow_dispatch]
+on: [workflow_dispatch]                   # 実行のトリガー（手動実行のみ許可）
 
 jobs:
   job1:                       # 1つ目のジョブ

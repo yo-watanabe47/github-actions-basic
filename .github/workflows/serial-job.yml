@@ -1,0 +1,16 @@
+name: Serial Job Workflow     # 直列実行用のワークフロー
+on: [push]
+
+jobs:
+  job1:                       # 先に実行されるジョブ
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ジョブ1を実行中..."
+      - run: sleep 15
+
+  job2:                       # job1の後に実行されるジョブ
+    needs: job1                # ★重要：job1が正常終了するまで待機する
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ジョブ2を実行中..."
+      - run: sleep 15
