@@ -1,0 +1,15 @@
+name: Parallel Job Workflow   # 並列実行用のワークフロー
+on: [push]
+
+jobs:
+  job1:                       # 1つ目のジョブ
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ジョブ1を実行中..."
+      - run: sleep 15         # 動きを確認しやすくするため、15秒待機する
+
+  job2:                       # 2つ目のジョブ（needsがないため、job1と同時に開始される）
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "ジョブ2を実行中..."
+      - run: sleep 15         # こちらも15秒待機する
