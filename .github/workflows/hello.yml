@@ -1,5 +1,5 @@
 name: basic-exercises Workflow  # ワークフローの名前（GitHubのActionsタブに表示されます）
-on: [push,workflow_dispatch]    # 実行のトリガー(pushと手動実行の両方を許可)
+on: [workflow_dispatch]    # 実行のトリガー(pushと手動実行の両方を許可)
 
 jobs:                           # 実行するジョブ（作業のまとまり）の定義
   hello-job:                    # ジョブの識別名（任意の名前でOKです）
